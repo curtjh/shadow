@@ -31,11 +31,11 @@ Examples:
    ```
    shadow.exe -v [computername] -consent
    ```
-5. List connected users:
+5. List connected users: (use of this switch will not shadow a session, only list users)
    ```
-   shadow.exe -v [computername] -listUsers (use of this switch will not shadow a session, only list users)
+   shadow.exe -v [computername] -listUsers 
    ```
-6. Disconnect a session:
+6. Disconnect a session: (use of this switch will not shadow a session, only attempt to disconnect passed session number)
    ```
-   shadow.exe -v [computername] -dissconnect [sessionNumber] (use of this switch will not shadow a session, only attempt to disconnect passed session number)
+   shadow.exe -v [computername] -dissconnect [sessionNumber] 
    ```
