@@ -31,3 +31,7 @@ Examples:
 5. List connected users:
 
    shadow.exe -v [computername] -listUsers (use of this switch will not shadow a session, only list users)
+   
+6. Disconnect a session:
+
+   shadow.exe -v [computername] -dissconnect [sessionNumber]
