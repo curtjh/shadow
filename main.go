@@ -52,7 +52,6 @@ func main() {
 
 	} else {
 
-		// result :=
 		connections.ParseOutput(string(out))
 
 		x := 0
