@@ -47,7 +47,7 @@ func main() {
 
 		fmt.Println()
 		fmt.Println(err)
-		fmt.Printf("%s is mgiht be offline...\n", v)
+		fmt.Printf("%s might be offline...\n", v)
 		fmt.Println()
 
 	} else {
