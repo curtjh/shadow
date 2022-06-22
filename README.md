@@ -34,4 +34,4 @@ Examples:
    
 6. Disconnect a session:
 
-   shadow.exe -v [computername] -dissconnect [sessionNumber]
+   shadow.exe -v [computername] -dissconnect [sessionNumber] (use of this switch will not shadow a session, only attempt to disconnect passed session number)
