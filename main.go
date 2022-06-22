@@ -15,12 +15,14 @@ func main() {
 	var listUsers bool
 	var control bool
 	var consent bool
+	var credPrompt bool
 	var disconnect string
 
 	flag.StringVar(&v, "v", "", "Computer Name - Required first for all commands")
 	flag.BoolVar(&control, "control", false, "Take Control of system (see consent)")
 	flag.BoolVar(&consent, "consent", false, "Get consent from user before shadowing/controlling")
 	flag.BoolVar(&listUsers, "listUsers", false, "Get list of users logged in (active and disconnected)")
+	flag.BoolVar(&credPrompt, "credPrompt", false, "Get list of users logged in (active and disconnected)")
 	flag.StringVar(&disconnect, "disconnect", "0", "Remove user session providing session ID (use listUsers to get session")
 	flag.Parse()
 
@@ -122,17 +124,25 @@ func main() {
 				var cmd string
 				shadowCmd := "c:\\windows\\system32\\mstsc.exe /v " + v + " /shadow:" + thisConn.ID
 
+				prompt := ""
+
+				if credPrompt {
+
+					prompt = " /prompt"
+
+				}
+
 				if !consent {
 
 					if control {
 
 						// both control and no consent (default condition of no other args are provided beyond -v (computername) )
-						cmd = "{" + shadowCmd + " /noConsentPrompt /control}"
+						cmd = "{" + shadowCmd + " /noConsentPrompt /control" + prompt + "}"
 
 					} else {
 
 						// shadow no consent
-						cmd = "{" + shadowCmd + " /noConsentPrompt}"
+						cmd = "{" + shadowCmd + " /noConsentPrompt" + prompt + "}"
 
 					}
 
@@ -141,12 +151,12 @@ func main() {
 					if control {
 
 						// both control and consent
-						cmd = "{" + shadowCmd + " /control}"
+						cmd = "{" + shadowCmd + " /control" + prompt + "}"
 
 					} else {
 
 						// no control with consent consent
-						cmd = "{" + shadowCmd + "}"
+						cmd = "{" + shadowCmd + prompt + "}"
 
 					}
 
