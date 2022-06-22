@@ -39,3 +39,8 @@ Examples:
    ```
    shadow.exe -v [computername] -dissconnect [sessionNumber] 
    ```
+   
+7. Prompt for credentials: (use this if your account can't shadow, but you have access to an account that can)
+   ```
+   shadow.exe -v [computername] -credPrompt 
+   ```
