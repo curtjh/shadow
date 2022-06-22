@@ -73,11 +73,11 @@ func main() {
 
 			}
 
+			activeSession = true
+			var cmd string
+
 			if thisConn.Status == "Active" {
 
-				activeSession = true
-
-				var cmd string
 				shadowCmd := "c:\\windows\\system32\\mstsc.exe /v " + v + " /shadow:" + thisConn.ID
 
 				prompt := ""
