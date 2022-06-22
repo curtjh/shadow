@@ -52,52 +52,8 @@ func main() {
 
 	} else {
 
-		result := string(out)
-
-		sli := strings.Split(strings.ReplaceAll(result, "\r\n", "\n"), "\n")
-
-		for _, line := range sli {
-
-			vals := strings.Fields(line)
-
-			if len(vals) > 0 {
-
-				if vals[0] != "services" && vals[0] != "SESSIONNAME" && vals[0] != " " {
-
-					// check for active console session
-					if strings.Contains(line, "console") && strings.Contains(line, "Active") {
-
-						connections.AddConnection(vals[1], vals[2], vals[3])
-
-					} else if strings.Contains(line, "rdp-tpc#") && strings.Contains(line, "Active") {
-
-						// RDP session is the active session.  values 1, 2, and 3 are user, id, and status
-						connections.AddConnection(vals[0], vals[1], vals[2])
-
-					} else {
-
-						// if it's not the other 2, it should be a slice that contains values 1, 2, and 3 are user, id, and status
-						// they could be either active or disc at this point
-						if vals[0] != "rdp-tcp" && !strings.Contains(line, "console") { // the rdp-tcp line is of no interest, and at this point we know the console is not active
-
-							if strings.Contains(vals[0], "rdp-tcp#") {
-
-								connections.AddConnection(vals[1], vals[2], vals[3])
-
-							} else {
-
-								connections.AddConnection(vals[0], vals[1], vals[2])
-							}
-
-						}
-
-					}
-
-				}
-
-			}
-
-		}
+		// result :=
+		connections.ParseOutput(string(out))
 
 		x := 0
 		activeSession := false
