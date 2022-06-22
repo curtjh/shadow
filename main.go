@@ -69,7 +69,7 @@ func main() {
 
 				}
 
-				fmt.Println(thisConn.Computer + "   " + thisConn.ID + "     " + thisConn.Status)
+				fmt.Println(thisConn.User + "   " + thisConn.ID + "     " + thisConn.Status)
 
 			}
 

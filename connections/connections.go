@@ -6,19 +6,19 @@ import (
 )
 
 type Connections struct {
-	Computer string
-	ID       string
-	Status   string
+	User   string
+	ID     string
+	Status string
 }
 
 var List []Connections
 
-func addConnection(computer string, id string, status string) {
+func addConnection(user string, id string, status string) {
 
 	f := Connections{
-		Computer: string(computer),
-		ID:       string(id),
-		Status:   string(status),
+		User:   string(user),
+		ID:     string(id),
+		Status: string(status),
 	}
 	List = append(List, f)
 
