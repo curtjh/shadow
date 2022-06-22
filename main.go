@@ -22,7 +22,7 @@ func main() {
 	flag.BoolVar(&control, "control", false, "Take Control of system (see consent)")
 	flag.BoolVar(&consent, "consent", false, "Get consent from user before shadowing/controlling")
 	flag.BoolVar(&listUsers, "listUsers", false, "Get list of users logged in (active and disconnected)")
-	flag.BoolVar(&credPrompt, "credPrompt", false, "Get list of users logged in (active and disconnected)")
+	flag.BoolVar(&credPrompt, "credPrompt", false, "Prompt for credentials that have permissions to shadow")
 	flag.StringVar(&disconnect, "disconnect", "0", "Remove user session providing session ID (use listUsers to get session")
 	flag.Parse()
 
