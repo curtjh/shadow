@@ -5,9 +5,9 @@ Requirements:
 
 All that's required on for this to work is that you have permissions to run 'qwinsta.exe' and 'rwinsta.exe' on remote computers.
 Example to test from your command line:
-
+```
 qwinsta /server:[computer]
-
+```
 if that produces result without error, you can use this provided RDP Shadowing is enabled on the target computer
 
 Examples:
