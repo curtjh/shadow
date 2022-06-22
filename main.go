@@ -65,10 +65,11 @@ func main() {
 					fmt.Println()
 					fmt.Println("Logged in Users:")
 					fmt.Println()
+					fmt.Println("USER      ID    STATUS")
 
 				}
 
-				fmt.Println(thisConn.Computer + " " + thisConn.ID + " " + thisConn.Status)
+				fmt.Println(thisConn.Computer + "   " + thisConn.ID + "     " + thisConn.Status)
 
 			}
 
