@@ -32,7 +32,7 @@ func Qwinsta(computer string) ([]byte, error) {
 
 func RemoveSession(computer string, session string) ([]byte, error) {
 
-	cmd := exec.Command("qwinsta.exe", "/server:"+computer)
+	cmd := exec.Command("rwinsta.exe", session, "/v", computer)
 	return cmd.CombinedOutput()
 
 }
