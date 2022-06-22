@@ -63,9 +63,9 @@ func main() {
 				if x == 0 {
 
 					fmt.Println()
-					fmt.Println("Logged in Users:")
+					fmt.Printf("Users Currently Logged in to %s: \n", strings.ToUpper(v))
 					fmt.Println()
-					fmt.Println("USER      ID    STATUS")
+					fmt.Println("USER       ID    STATUS")
 
 				}
 
