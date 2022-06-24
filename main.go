@@ -93,12 +93,12 @@ func main() {
 
 					if control {
 
-						// both control and no consent (default condition of no other args are provided beyond -v (computername) )
+						// control with no consent
 						cmd = "{" + shadowCmd + " /noConsentPrompt /control" + prompt + "}"
 
 					} else {
 
-						// shadow no consent
+						// shadow only with no consent (default condition if no other args are provided beyond -v (computername) )
 						cmd = "{" + shadowCmd + " /noConsentPrompt" + prompt + "}"
 
 					}
