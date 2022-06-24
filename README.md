@@ -1,7 +1,7 @@
-# Microsoft RDP Shadow Go implimentation
+# Microsoft RDP Shadow Go Implementation
 Microsoft RDP shadow app in Go.
 
-Microsoft provides a way to shadow a user's session out of the box within mstsc.exe using the /shadow swtich. However, before running that, you'll need to know the session number of the remote user, and to get that you'll need to run another command first (qwinsta /server:[remoteComputer]). This combines those 2 actions (getting remote session id, then attempting a shadow) into one exe so if you use shadowing, this will make your life easier.
+Microsoft provides a way to shadow a user's session out of the box within mstsc.exe using the /shadow swtich. However, before running that, you'll need to know the session number of the remote user, and to get that you'll need to run another command first (qwinsta /server:[remoteComputer]). This combines those 2 actions (getting remote session id, then attempting a shadow) into one exe.
 
 Requirements:
 
